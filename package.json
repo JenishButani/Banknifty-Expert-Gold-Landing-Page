@@ -4,8 +4,7 @@
   "description": "BankNifty Expert Landing Page",
   "main": "index.html",
   "scripts": {
-    "start": "serve -s .",
-    "build": "echo 'Static site - no build required'"
+    "start": "serve -s ."
   },
   "keywords": ["landing-page", "banknifty", "trading"],
   "author": "",
