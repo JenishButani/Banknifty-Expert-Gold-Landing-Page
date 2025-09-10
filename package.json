@@ -1,0 +1,16 @@
+{
+  "name": "banknifty-expert-landing",
+  "version": "1.0.0",
+  "description": "BankNifty Expert Landing Page",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve -s .",
+    "build": "echo 'Static site - no build required'"
+  },
+  "keywords": ["landing-page", "banknifty", "trading"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.0.0"
+  }
+}
