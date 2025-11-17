@@ -1,15 +1,37 @@
 {
   "name": "banknifty-expert-landing",
-  "version": "1.0.0",
-  "description": "BankNifty Expert Landing Page",
-  "main": "index.html",
+  "version": "2.0.0",
+  "description": "BankNifty Expert Landing Page - Next.js",
+  "private": true,
   "scripts": {
-    "start": "serve -s ."
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "keywords": ["landing-page", "banknifty", "trading"],
-  "author": "",
-  "license": "MIT",
+  "dependencies": {
+    "next": "^15.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
   "devDependencies": {
-    "serve": "^14.0.0"
-  }
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^15.0.3",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3"
+  },
+  "keywords": [
+    "landing-page",
+    "banknifty",
+    "trading",
+    "nextjs",
+    "sebi-registered"
+  ],
+  "author": "",
+  "license": "MIT"
 }
