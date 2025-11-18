@@ -46,9 +46,9 @@ export default function MyAdPage() {
   }, []);
 
   const handleTelegramClick = (buttonLocation: string) => {
-    // Track in Facebook Pixel
+    // Track in Facebook Pixel - Lead event for conversions
     if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'Contact');
+      (window as any).fbq('track', 'Lead');
     }
 
     // Track in Analytics

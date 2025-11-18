@@ -86,7 +86,7 @@ Google Analytics / GTM:
 **Trigger**: Click first "Join Telegram" button
 ```
 Facebook Pixel:
-  - Event: Contact
+  - Event: Lead
 
 Google Analytics / GTM:
   - Event: Contact (custom)
@@ -110,7 +110,7 @@ Google Analytics / GTM:
 **Trigger**: Click second "Join Telegram" button
 ```
 Facebook Pixel:
-  - Event: Contact
+  - Event: Lead
 
 Google Analytics / GTM:
   - Event: Contact (custom)
