@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import CountdownTimer from './CountdownTimer';
+import { trackCTAClick, trackButtonClick } from '@/lib/analytics';
 
 interface HeroSectionProps {
   telegramLink: string;
@@ -9,9 +10,14 @@ interface HeroSectionProps {
 
 export default function HeroSection({ telegramLink }: HeroSectionProps) {
   const handleCTAClick = () => {
+    // Track in Facebook Pixel
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'Lead');
     }
+
+    // Track in Analytics
+    trackCTAClick('Hero Join Telegram', 'telegram');
+    trackButtonClick('Join FREE Now', 'hero_section', telegramLink);
   };
 
   return (

@@ -1,14 +1,21 @@
 'use client';
 
+import { trackCTAClick, trackButtonClick } from '@/lib/analytics';
+
 interface FinalCTAProps {
   telegramLink: string;
 }
 
 export default function FinalCTA({ telegramLink }: FinalCTAProps) {
   const handleCTAClick = () => {
+    // Track Facebook Pixel
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'Lead');
     }
+
+    // Track Analytics
+    trackCTAClick('Final CTA Join Now', 'telegram');
+    trackButtonClick('Join Now - Final CTA', 'footer_cta', telegramLink);
   };
 
   return (

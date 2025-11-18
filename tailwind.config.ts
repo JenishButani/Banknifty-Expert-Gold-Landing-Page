@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        roboto: ['var(--font-roboto)', 'Roboto', 'sans-serif'],
+      },
       colors: {
         background: '#0a0e27',
         'background-secondary': '#1a1f3a',

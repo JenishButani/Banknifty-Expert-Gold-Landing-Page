@@ -1,6 +1,15 @@
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
+import { Roboto } from 'next/font/google';
 import './globals.css';
+
+const roboto = Roboto({
+  weight: ['100', '300', '400', '500', '700', '900'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+  variable: '--font-roboto',
+  display: 'swap',
+});
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -64,7 +73,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={roboto.variable}>
       <head>
         {/* Meta Pixel Code */}
         <Script

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { trackLead, trackCountdownComplete, trackEvent } from '@/lib/analytics';
 
 interface CountdownTimerProps {
   initialSeconds?: number;
@@ -22,6 +23,16 @@ export default function CountdownTimer({
       if ((window as any).fbq) {
         (window as any).fbq('track', 'Lead');
       }
+
+      // Track countdown completion
+      trackCountdownComplete(redirectUrl);
+      trackLead('countdown_auto_redirect');
+      trackEvent('auto_redirect', {
+        category: 'conversion',
+        label: 'countdown_timer',
+        destination: redirectUrl,
+      });
+
       // Redirect to Telegram
       setTimeout(() => {
         window.location.href = redirectUrl;
