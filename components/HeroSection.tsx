@@ -13,6 +13,7 @@ export default function HeroSection({ telegramLink }: HeroSectionProps) {
     // Track in Facebook Pixel
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'Lead');
+      (window as any).fbq('track', 'Contact');
     }
 
     // Track in Analytics

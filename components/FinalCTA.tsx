@@ -11,6 +11,7 @@ export default function FinalCTA({ telegramLink }: FinalCTAProps) {
     // Track Facebook Pixel
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'Lead');
+      (window as any).fbq('track', 'Contact');
     }
 
     // Track Analytics

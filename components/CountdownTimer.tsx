@@ -22,6 +22,7 @@ export default function CountdownTimer({
       // Track the event with Facebook Pixel
       if ((window as any).fbq) {
         (window as any).fbq('track', 'Lead');
+        (window as any).fbq('track', 'Contact');
       }
 
       // Track countdown completion
