@@ -3,7 +3,6 @@ import MarketTicker from '@/components/MarketTicker';
 import HeroSection from '@/components/HeroSection';
 import UrgencyStrip from '@/components/UrgencyStrip';
 import BenefitsGrid from '@/components/BenefitsGrid';
-import SocialProof from '@/components/SocialProof';
 import TrustBadges from '@/components/TrustBadges';
 import FinalCTA from '@/components/FinalCTA';
 import Disclaimer from '@/components/Disclaimer';
@@ -21,7 +20,6 @@ export default function Home() {
           <HeroSection telegramLink={TELEGRAM_LINK} />
           <UrgencyStrip />
           <BenefitsGrid />
-          <SocialProof />
           <TrustBadges />
           <FinalCTA telegramLink={TELEGRAM_LINK} />
           <Disclaimer />
