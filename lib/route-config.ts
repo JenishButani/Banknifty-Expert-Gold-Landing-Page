@@ -11,7 +11,7 @@ export interface RouteConfig {
 
 export const ROUTE_CONFIGS: Record<string, RouteConfig> = {
   '/': {
-    telegramLink: process.env.NEXT_PUBLIC_TELEGRAM_LINK || 'https://t.me/+KIHM83XCLoMyNjU1',
+    telegramLink: 'https://telegram.me/+hZ8ETo8OJTU1YmJl',
     fbPixelId: process.env.NEXT_PUBLIC_FB_PIXEL_ID || '641640395326380',
     routeName: 'Main Landing Page',
   },

@@ -7,7 +7,8 @@ import TrustBadges from '@/components/TrustBadges';
 import FinalCTA from '@/components/FinalCTA';
 import Disclaimer from '@/components/Disclaimer';
 
-const TELEGRAM_LINK = process.env.NEXT_PUBLIC_TELEGRAM_LINK || 'https://t.me/+KIHM83XCLoMyNjU1';
+// Hardcoded on purpose: overrides the NEXT_PUBLIC_TELEGRAM_LINK env var set in Vercel
+const TELEGRAM_LINK = 'https://telegram.me/+hZ8ETo8OJTU1YmJl';
 
 export default function Home() {
   return (
