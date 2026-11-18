@@ -13,10 +13,9 @@ const roboto = Roboto({
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || '';
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || '';
-const FB_PIXEL_ID = process.env.NEXT_PUBLIC_FB_PIXEL_ID || '';
-const FB_PIXEL_ID_2 = process.env.NEXT_PUBLIC_FB_PIXEL_ID_2 || '2980927835587739';
-// fbq('track', ...) fires to every initialized pixel, so all events go to both
-const FB_PIXEL_IDS = Array.from(new Set([FB_PIXEL_ID, FB_PIXEL_ID_2].filter(Boolean)));
+// Single Meta Pixel for the whole site. Hardcoded on purpose so the
+// NEXT_PUBLIC_FB_PIXEL_ID env var in Vercel cannot add a different pixel.
+const FB_PIXEL_ID = '1062212647959231';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -133,22 +132,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               t.src=v;s=b.getElementsByTagName(e)[0];
               s.parentNode.insertBefore(t,s)}(window, document,'script',
               'https://connect.facebook.net/en_US/fbevents.js');
-              ${FB_PIXEL_IDS.map((id) => `fbq('init', '${id}');`).join('\n              ')}
+              fbq('init', '${FB_PIXEL_ID}');
               fbq('track', 'PageView');
             `,
           }}
         />
         <noscript>
-          {FB_PIXEL_IDS.map((id) => (
-            <img
-              key={id}
-              height="1"
-              width="1"
-              style={{ display: 'none' }}
-              src={`https://www.facebook.com/tr?id=${id}&ev=PageView&noscript=1`}
-              alt=""
-            />
-          ))}
+          <img
+            height="1"
+            width="1"
+            style={{ display: 'none' }}
+            src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
+            alt=""
+          />
         </noscript>
         {/* End Meta Pixel Code */}
       </head>
