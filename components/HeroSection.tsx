@@ -14,7 +14,7 @@ export default function HeroSection({ telegramLink }: HeroSectionProps) {
     trackCTAClick('Hero Join Telegram', 'telegram');
     trackButtonClick('Join FREE Now', 'hero_section', telegramLink);
 
-    // Meta Lead + Contact, then open Telegram once the pixel request has gone out
+    // Meta Lead + Contact + Subscribe, then open Telegram once the pixel request has gone out
     trackJoinAndRedirect(telegramLink, e);
   };
 

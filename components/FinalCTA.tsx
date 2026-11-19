@@ -12,7 +12,7 @@ export default function FinalCTA({ telegramLink }: FinalCTAProps) {
     trackCTAClick('Final CTA Join Now', 'telegram');
     trackButtonClick('Join Now - Final CTA', 'footer_cta', telegramLink);
 
-    // Meta Lead + Contact, then open Telegram once the pixel request has gone out
+    // Meta Lead + Contact + Subscribe, then open Telegram once the pixel request has gone out
     trackJoinAndRedirect(telegramLink, e);
   };
 

@@ -27,7 +27,7 @@ export default function CountdownTimer({
         destination: redirectUrl,
       });
 
-      // Meta Lead + Contact (once each), then redirect to Telegram after the
+      // Meta Lead + Contact + Subscribe (once each), then redirect to Telegram after the
       // pixel request has gone out. The old trackLead() call here sent a second
       // duplicate Lead to Meta, so it was removed.
       trackJoinAndRedirect(redirectUrl);

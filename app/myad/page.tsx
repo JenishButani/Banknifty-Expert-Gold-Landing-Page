@@ -24,8 +24,8 @@ export default function MyAdPage() {
     trackCTAClick(`MyAd ${buttonLocation} Button`, 'telegram');
     trackButtonClick('Join Telegram', buttonLocation, TELEGRAM_LINK);
 
-    // Meta Lead, then open Telegram once the pixel request has gone out
-    trackJoinAndRedirect(TELEGRAM_LINK, e, ['Lead']);
+    // Meta Lead + Subscribe, then open Telegram once the pixel request has gone out
+    trackJoinAndRedirect(TELEGRAM_LINK, e, ['Lead', 'Subscribe']);
   };
 
   return (

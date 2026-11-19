@@ -61,7 +61,10 @@ type ClickLike = {
  * If the page navigates to Telegram the instant the button is tapped, the
  * browser (especially the Facebook/Instagram in-app browser that ad clicks
  * open in) cancels the pending pixel request and Meta never receives the
- * Lead/Contact event. Holding the navigation briefly lets the request go out.
+ * Lead/Contact/Subscribe event. Holding the navigation briefly lets the request go out.
+ *
+ * 'Subscribe' is the conversion event the Meta ad set optimizes for
+ * ("Website subscribes" in Ads Manager), so it must fire on every join.
  *
  * Pass the click event from an <a href> so the link still works if JS fails,
  * and so Ctrl/Cmd-click (new tab) is left alone.
@@ -69,7 +72,7 @@ type ClickLike = {
 export function trackJoinAndRedirect(
   url: string,
   e?: ClickLike | null,
-  metaEvents: string[] = ['Lead', 'Contact']
+  metaEvents: string[] = ['Lead', 'Contact', 'Subscribe']
 ): void {
   if (typeof window === 'undefined') return;
 
