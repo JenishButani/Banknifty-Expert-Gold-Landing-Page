@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { trackLead, trackCountdownComplete, trackEvent } from '@/lib/analytics';
+import { trackCountdownComplete, trackEvent, trackJoinAndRedirect } from '@/lib/analytics';
 
 interface CountdownTimerProps {
   initialSeconds?: number;
@@ -19,25 +19,18 @@ export default function CountdownTimer({
   useEffect(() => {
     // Redirect when timer reaches 0
     if (seconds === 0 && redirectUrl && typeof window !== 'undefined') {
-      // Track the event with Facebook Pixel
-      if ((window as any).fbq) {
-        (window as any).fbq('track', 'Lead');
-        (window as any).fbq('track', 'Contact');
-      }
-
       // Track countdown completion
       trackCountdownComplete(redirectUrl);
-      trackLead('countdown_auto_redirect');
       trackEvent('auto_redirect', {
         category: 'conversion',
         label: 'countdown_timer',
         destination: redirectUrl,
       });
 
-      // Redirect to Telegram
-      setTimeout(() => {
-        window.location.href = redirectUrl;
-      }, 100);
+      // Meta Lead + Contact (once each), then redirect to Telegram after the
+      // pixel request has gone out. The old trackLead() call here sent a second
+      // duplicate Lead to Meta, so it was removed.
+      trackJoinAndRedirect(redirectUrl);
       return;
     }
 

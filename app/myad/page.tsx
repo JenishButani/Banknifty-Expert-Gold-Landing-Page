@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useEffect } from 'react';
-import { trackContact, trackCTAClick, trackButtonClick, trackPageView } from '@/lib/analytics';
+import { trackContact, trackCTAClick, trackButtonClick, trackPageView, trackJoinAndRedirect } from '@/lib/analytics';
 
 const TELEGRAM_LINK = process.env.NEXT_PUBLIC_MYAD_TELEGRAM_LINK || 'https://t.me/+pkE7SAaUqEdjOTM1';
 
@@ -15,16 +15,17 @@ export default function MyAdPage() {
     }
   }, []);
 
-  const handleTelegramClick = (buttonLocation: string) => {
-    // Track in Facebook Pixel - Lead event for conversions
-    if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'Lead');
-    }
-
-    // Track in Analytics
+  const handleTelegramClick = (
+    buttonLocation: string,
+    e: React.MouseEvent<HTMLAnchorElement>
+  ) => {
+    // Track in Analytics (trackContact also sends Meta 'Contact')
     trackContact('telegram', TELEGRAM_LINK);
     trackCTAClick(`MyAd ${buttonLocation} Button`, 'telegram');
     trackButtonClick('Join Telegram', buttonLocation, TELEGRAM_LINK);
+
+    // Meta Lead, then open Telegram once the pixel request has gone out
+    trackJoinAndRedirect(TELEGRAM_LINK, e, ['Lead']);
   };
 
   return (
@@ -45,7 +46,7 @@ export default function MyAdPage() {
         <div className="btn-second">
           <a
             href={TELEGRAM_LINK}
-            onClick={() => handleTelegramClick('top')}
+            onClick={(e) => handleTelegramClick('top', e)}
             className="telegram-btn"
           >
             Join Telegram
@@ -63,7 +64,7 @@ export default function MyAdPage() {
         <div className="btn-second" id="second">
           <a
             href={TELEGRAM_LINK}
-            onClick={() => handleTelegramClick('bottom')}
+            onClick={(e) => handleTelegramClick('bottom', e)}
             className="telegram-btn"
           >
             Join Telegram

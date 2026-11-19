@@ -43,6 +43,52 @@ export function trackEvent(
 }
 
 /**
+ * How long to wait after firing the Meta events before leaving for Telegram.
+ */
+export const JOIN_REDIRECT_DELAY_MS = 600;
+
+type ClickLike = {
+  preventDefault: () => void;
+  metaKey?: boolean;
+  ctrlKey?: boolean;
+  shiftKey?: boolean;
+  button?: number;
+};
+
+/**
+ * Send the Meta conversion events for a Telegram join, then open the link.
+ *
+ * If the page navigates to Telegram the instant the button is tapped, the
+ * browser (especially the Facebook/Instagram in-app browser that ad clicks
+ * open in) cancels the pending pixel request and Meta never receives the
+ * Lead/Contact event. Holding the navigation briefly lets the request go out.
+ *
+ * Pass the click event from an <a href> so the link still works if JS fails,
+ * and so Ctrl/Cmd-click (new tab) is left alone.
+ */
+export function trackJoinAndRedirect(
+  url: string,
+  e?: ClickLike | null,
+  metaEvents: string[] = ['Lead', 'Contact']
+): void {
+  if (typeof window === 'undefined') return;
+
+  const fbq = (window as any).fbq;
+  if (fbq) {
+    metaEvents.forEach((name) => fbq('track', name));
+  }
+
+  // Opening in a new tab keeps this page alive, so the request finishes on its own
+  const opensNewTab = !!e && (e.metaKey || e.ctrlKey || e.shiftKey || (e.button ?? 0) !== 0);
+  if (opensNewTab) return;
+
+  e?.preventDefault();
+  window.setTimeout(() => {
+    window.location.href = url;
+  }, JOIN_REDIRECT_DELAY_MS);
+}
+
+/**
  * Track page view
  */
 export function trackPageView(pagePath: string, pageTitle?: string): void {

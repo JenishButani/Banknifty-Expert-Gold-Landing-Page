@@ -2,23 +2,20 @@
 
 import Image from 'next/image';
 import CountdownTimer from './CountdownTimer';
-import { trackCTAClick, trackButtonClick } from '@/lib/analytics';
+import { trackCTAClick, trackButtonClick, trackJoinAndRedirect } from '@/lib/analytics';
 
 interface HeroSectionProps {
   telegramLink: string;
 }
 
 export default function HeroSection({ telegramLink }: HeroSectionProps) {
-  const handleCTAClick = () => {
-    // Track in Facebook Pixel
-    if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'Lead');
-      (window as any).fbq('track', 'Contact');
-    }
-
+  const handleCTAClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     // Track in Analytics
     trackCTAClick('Hero Join Telegram', 'telegram');
     trackButtonClick('Join FREE Now', 'hero_section', telegramLink);
+
+    // Meta Lead + Contact, then open Telegram once the pixel request has gone out
+    trackJoinAndRedirect(telegramLink, e);
   };
 
   return (
