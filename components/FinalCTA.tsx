@@ -22,7 +22,7 @@ export default function FinalCTA({ telegramLink }: FinalCTAProps) {
         Start Your Quality Trading Journey Today! 🚀
       </h2>
       <p className="text-white/80 mb-5">
-        Don&apos;t miss another High Quality Researched trades. Join 1,50,000+ traders now!
+        Get research-based BankNifty &amp; Nifty market updates on Telegram. Join free today!
       </p>
 
       <a
@@ -39,7 +39,7 @@ export default function FinalCTA({ telegramLink }: FinalCTAProps) {
       <div className="mt-4 flex justify-center gap-5 flex-wrap">
         <span className="text-gold text-sm">⚡ Instant Access</span>
         <span className="text-gold text-sm">💳 No Card Required</span>
-        <span className="text-gold text-sm">🎁 100% FREE</span>
+        <span className="text-gold text-sm">🎁 Free to Join</span>
       </div>
     </div>
   );

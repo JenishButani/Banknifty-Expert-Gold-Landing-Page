@@ -7,7 +7,7 @@ interface Benefit {
 const benefits: Benefit[] = [
   {
     icon: '💎',
-    title: 'Premium Calls',
+    title: 'Market Research',
     description: 'BankNifty & Nifty Options',
   },
   {

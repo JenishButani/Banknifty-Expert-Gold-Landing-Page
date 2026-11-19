@@ -4,9 +4,9 @@ interface TrustBadge {
 }
 
 const badges: TrustBadge[] = [
-  { icon: '🛡️', text: '100% Secure' },
+  { icon: '🛡️', text: 'Secure Website' },
   { icon: '✅', text: 'SEBI Registered' },
-  { icon: '🏆', text: 'Top Rated' },
+  { icon: '🎁', text: 'Free to Join' },
 ];
 
 export default function TrustBadges() {

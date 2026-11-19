@@ -55,7 +55,7 @@ export default function HeroSection({ telegramLink }: HeroSectionProps) {
         Get Expert Trading Research & Analysis
       </h1>
       <p className="text-base text-white/80 mb-6">
-        Join India&apos;s Most Trusted Trading Channel
+        Join Our Free Telegram Channel for Market Research
       </p>
 
       {/* Main CTA Button */}
@@ -78,27 +78,9 @@ export default function HeroSection({ telegramLink }: HeroSectionProps) {
       {/* Countdown Timer */}
       <CountdownTimer
         initialSeconds={30}
-        title="Next Signal Drop In"
+        title="Opening Telegram In"
         redirectUrl={telegramLink}
       />
-
-      {/* Live Counter */}
-      <div className="flex flex-wrap justify-center gap-4 sm:gap-8 my-6 p-4 sm:p-5 bg-white/[0.03] rounded-[20px] backdrop-blur-[10px]">
-        <div className="text-center min-w-[90px]">
-          <div className="text-[24px] sm:text-[32px] font-black text-gradient-rainbow">1,73,524+</div>
-          <div className="text-[10px] sm:text-[11px] text-white/60 uppercase tracking-wide leading-tight">Active Traders</div>
-        </div>
-        <div className="text-center min-w-[90px]">
-          <div className="text-[24px] sm:text-[32px] font-black text-gradient-rainbow">100%</div>
-          <div className="text-[10px] sm:text-[11px] text-white/60 uppercase tracking-wide leading-tight">
-            SEBI Compliance
-          </div>
-        </div>
-        <div className="text-center min-w-[90px]">
-          <div className="text-[24px] sm:text-[32px] font-black text-gradient-rainbow">647</div>
-          <div className="text-[10px] sm:text-[11px] text-white/60 uppercase tracking-wide leading-tight">Joining Today</div>
-        </div>
-      </div>
     </div>
   );
 }

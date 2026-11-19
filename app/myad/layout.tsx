@@ -4,8 +4,8 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://banknift-yexpert.i
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'BANKNIFTY EXPERT™ - Best Investing Company | 10+ Years Experience',
-  description: 'Join India\'s #1 Channel for Investors. Get Nifty & BankNifty trend analysis with 90% accuracy. Expert guidance for beginners & retail investors.',
+  title: 'BANKNIFTY EXPERT™ - Nifty & BankNifty Market Research',
+  description: 'Join our free Telegram channel for Nifty & BankNifty market research and analysis. Educational content for beginners & retail investors.',
   keywords: [
     'banknifty',
     'nifty',
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     url: `${SITE_URL}/myad`,
     siteName: 'BANKNIFTY EXPERT',
-    title: 'BANKNIFTY EXPERT™ - Best Investing Company',
-    description: 'Join India\'s #1 Channel for Investors. Get Nifty & BankNifty trend analysis with 90% accuracy.',
+    title: 'BANKNIFTY EXPERT™ - Nifty & BankNifty Market Research',
+    description: 'Join our free Telegram channel for Nifty & BankNifty market research and analysis.',
     images: [
       {
         url: '/og-image.jpg',
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'BANKNIFTY EXPERT™ - Best Investing Company',
-    description: 'Join India\'s #1 Channel for Investors. Get Nifty & BankNifty trend analysis with 90% accuracy.',
+    title: 'BANKNIFTY EXPERT™ - Nifty & BankNifty Market Research',
+    description: 'Join our free Telegram channel for Nifty & BankNifty market research and analysis.',
     images: ['/og-image.jpg'],
   },
 };

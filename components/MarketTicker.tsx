@@ -7,24 +7,25 @@ interface TickerItem {
 }
 
 const tickerItems: TickerItem[] = [
+  // Neutral labels only: no price predictions or levels in the ad landing page
   {
     symbol: 'BANKNIFTY',
-    prediction: 'Predicted: Bullish Move +124pts',
+    prediction: 'Research & Analysis',
     color: 'text-gold',
   },
   {
     symbol: 'NIFTY',
-    prediction: 'Possible Pullback near 22300',
+    prediction: 'Market Updates',
     color: 'text-pink',
   },
   {
     symbol: 'FINNIFTY',
-    prediction: 'Sideways Pattern Detected',
+    prediction: 'Educational Content',
     color: 'text-gold',
   },
   {
-    symbol: 'USDINR',
-    prediction: 'Strength toward 83.2',
+    symbol: 'SEBI RA',
+    prediction: 'Registered Research Analyst',
     color: 'text-gold',
   },
 ];

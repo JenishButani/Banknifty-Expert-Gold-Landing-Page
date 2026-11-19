@@ -11,7 +11,7 @@ interface CountdownTimerProps {
 
 export default function CountdownTimer({
   initialSeconds = 30,
-  title = "Next Signal Drop In",
+  title = "Opening Telegram In",
   redirectUrl
 }: CountdownTimerProps) {
   const [seconds, setSeconds] = useState(initialSeconds);

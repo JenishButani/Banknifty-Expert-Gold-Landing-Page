@@ -39,7 +39,7 @@ export default function MyAdPage() {
 
         <div className="get-id">
           <h1 className="main-title">🚀 BANKNIFTY EXPERT™️ 🚀</h1>
-          <h3 className="subtitle">Best Investing Company</h3>
+          <h3 className="subtitle">Nifty &amp; BankNifty Market Research</h3>
           <h3 className="subtitle">10+ Years Experience</h3>
         </div>
 
@@ -55,10 +55,10 @@ export default function MyAdPage() {
 
         <div className="get-id">
           <p className="feature">📈 Nifty, BankNifty trend Beginners &amp; Retail Investors</p>
-          <p className="feature">🔔 90% accurancy in indian market</p>
+          <p className="feature">🔔 Research-based analysis of the Indian market</p>
           <p className="feature">📈 Get Nifty,Banknifty Level Update With Proper Analysis</p>
           <p className="feature">👇 For More Updates CLICK ON BELOW BUTTON</p>
-          <h2 className="cta-heading">India&apos;s #1 Channel for Investors – Join Now!</h2>
+          <h2 className="cta-heading">Join Our Free Telegram Channel – Join Now!</h2>
         </div>
 
         <div className="btn-second" id="second">

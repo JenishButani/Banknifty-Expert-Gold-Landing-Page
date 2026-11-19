@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://bankniftyexpert.com'),
   title: 'Banknifty Expert - SEBI Registered Research Analyst | Join Free Telegram Channel',
   description:
-    'Join India\'s Most Trusted Trading Channel. Get expert BankNifty & Nifty Options trading research from SEBI Registered Analyst. 173,524+ Active Traders. Premium calls with real-time alerts and risk management.',
+    'Get BankNifty & Nifty Options market research from a SEBI Registered Research Analyst. Join our free Telegram channel for real-time alerts and risk management.',
   keywords: [
     'BankNifty',
     'Nifty Options',
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     siteName: 'Banknifty Expert',
     title: 'Banknifty Expert - SEBI Registered Research Analyst',
     description:
-      'Join India\'s Most Trusted Trading Channel. Get expert BankNifty & Nifty Options trading research from SEBI Registered Analyst.',
+      'Get BankNifty & Nifty Options market research from a SEBI Registered Research Analyst. Join our free Telegram channel.',
     images: [
       {
         url: '/logo.jpeg',
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Banknifty Expert - SEBI Registered Research Analyst',
     description:
-      'Join India\'s Most Trusted Trading Channel. Get expert BankNifty & Nifty Options trading research from SEBI Registered Analyst.',
+      'Get BankNifty & Nifty Options market research from a SEBI Registered Research Analyst. Join our free Telegram channel.',
     images: ['/logo.jpeg'],
   },
 };
