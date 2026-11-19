@@ -15,7 +15,7 @@ const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || '';
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || '';
 // Single Meta Pixel for the whole site. Hardcoded on purpose so the
 // NEXT_PUBLIC_FB_PIXEL_ID env var in Vercel cannot add a different pixel.
-const FB_PIXEL_ID = '1062212647959231';
+const FB_PIXEL_ID = '2980927835587739';
 
 export const viewport: Viewport = {
   width: 'device-width',
