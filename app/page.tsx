@@ -8,7 +8,7 @@ import FinalCTA from '@/components/FinalCTA';
 import Disclaimer from '@/components/Disclaimer';
 
 // Hardcoded on purpose: overrides the NEXT_PUBLIC_TELEGRAM_LINK env var set in Vercel
-const TELEGRAM_LINK = 'https://telegram.me/+hZ8ETo8OJTU1YmJl';
+const TELEGRAM_LINK = 'https://telegram.me/+w0P8GurFKHVmMjY1';
 
 export default function Home() {
   return (

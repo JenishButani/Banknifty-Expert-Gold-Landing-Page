@@ -11,13 +11,13 @@ export interface RouteConfig {
 
 export const ROUTE_CONFIGS: Record<string, RouteConfig> = {
   '/': {
-    telegramLink: 'https://telegram.me/+hZ8ETo8OJTU1YmJl',
-    fbPixelId: '2980927835587739',
+    telegramLink: 'https://telegram.me/+w0P8GurFKHVmMjY1',
+    fbPixelId: '570823988425735',
     routeName: 'Main Landing Page',
   },
   '/myad': {
     telegramLink: process.env.NEXT_PUBLIC_MYAD_TELEGRAM_LINK || 'https://t.me/+pkE7SAaUqEdjOTM1',
-    fbPixelId: '2980927835587739',
+    fbPixelId: '570823988425735',
     routeName: 'MyAd Landing Page',
   },
 };
